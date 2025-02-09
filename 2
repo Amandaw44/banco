@@ -29,7 +29,7 @@ function menu(){
         menu();
 
     } else if ($opcao == 2){
-        $contas = readline ("informe sua conta ");
+        $numeroConta = readline ("informe sua conta ");
         $cpfCliente = readline ("informe seu cpf ");
 
         cadastrarConta($contas, $cpfCliente);
@@ -91,7 +91,7 @@ function depositar(&$contas, $numeroConta, $quantia){
 
     foreach ($contas as &$conta){
         if ($conta['numeroConta'] == $numeroConta){
-            $conta['saldo'] == $quantia;
+            $conta['saldo'] += $quantia;
             
             print "Deposito de R$ ($quantia) realizado com sucesso na conta ($numeroConta)";
 
